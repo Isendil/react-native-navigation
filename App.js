@@ -1,10 +1,12 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={styles.blue}>Hello World!</Text>
+      <Text style={styles.red}>WATSUUUUUUUUUP!</Text>
+      <Text style={styles.purple}>May the Force be with you, Always!</Text>
     </View>
   );
 }
@@ -12,8 +14,20 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "yellow",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  blue: {
+    color: "blue",
+    fontSize: 30,
+  },
+  red: {
+    color: "red",
+    fontSize: 17,
+  },
+  purple: {
+    color: "purple",
+    fontSize: 40,
   },
 });
