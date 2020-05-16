@@ -1,33 +1,52 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { Component } from "react";
+
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  ScrollView,
+} from "react-native";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import About from "./components/About";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.blue}>Hello World!</Text>
-      <Text style={styles.red}>WATSUUUUUUUUUP!</Text>
-      <Text style={styles.purple}>May the Force be with you, Always!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ title: "Welcome" }}
+        />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="About" component={About} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "yellow",
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
-  blue: {
-    color: "blue",
-    fontSize: 30,
+
+  button: {
+    backgroundColor: "blue",
+    padding: 20,
+    borderRadius: 5,
   },
-  red: {
-    color: "red",
-    fontSize: 17,
-  },
-  purple: {
-    color: "purple",
-    fontSize: 40,
+  buttonText: {
+    fontSize: 20,
+    color: "#fff",
   },
 });
